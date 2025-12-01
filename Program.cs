@@ -138,7 +138,30 @@ namespace Zenelejatszo
                         }
                         break;
 
-                   
+                    
+                    case "5":
+                        Console.Clear();
+                        Zene uj = new Zene();
+
+                        Console.Write("Cím: ");
+                        uj.Cim = Console.ReadLine() ?? "";
+
+                        Console.Write("Előadó: ");
+                        uj.Eloado = Console.ReadLine() ?? "";
+
+                        Console.Write("Műfaj: ");
+                        uj.Mufaj = Console.ReadLine() ?? "";
+
+                        Console.Write("Hossz percben: ");
+                        double hossz;
+                        double.TryParse(Console.ReadLine() ?? "0", out hossz);
+                        uj.HosszPerc = hossz;
+
+                        zenek.Add(uj);
+                        Console.WriteLine("Zene hozzáadva!");
+                        break;
+
+                 
         }
     }
 }
