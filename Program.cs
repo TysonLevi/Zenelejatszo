@@ -102,6 +102,20 @@ namespace Zenelejatszo
                             Console.WriteLine($"{sorszam++}. {z}");
                         break;
 
+                  
+                    case "2":
+                        Console.Clear();
+                        Console.Write("Add meg a keresett cím részletét: ");
+                        string keres = (Console.ReadLine() ?? "").ToLower();
+
+                        sorszam = 0;
+                        foreach (var z in zenek)
+                        {
+                            if (z.Cim.ToLower().Contains(keres))
+                                Console.WriteLine($"{sorszam++}. {z}");
+                        }
+                        break;
+
                    
         }
     }
