@@ -161,7 +161,24 @@ namespace Zenelejatszo
                         Console.WriteLine("Zene hozzáadva!");
                         break;
 
-                 
+                    
+                    case "6":
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var z in zenek)
+                            Console.WriteLine($"{sorszam++}. {z}");
+
+                        Console.Write("Törlendő index: ");
+                        int torol;
+                        int.TryParse(Console.ReadLine() ?? "-1", out torol);
+
+                        if (torol >= 0 && torol < zenek.Count)
+                            zenek.RemoveAt(torol);
+                        else
+                            Console.WriteLine("Hibás index!");
+                        break;
+
+                   
         }
     }
 }
