@@ -87,7 +87,22 @@ namespace Zenelejatszo
                 string valasztas = Console.ReadLine() ?? "";
                 int sorszam = 0;
 
-             
+                switch (valasztas)
+                {
+                    // Kilépés + mentés
+                    case "0":
+                        Mentes(zenek);
+                        return;
+
+                   
+                    case "1":
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var z in zenek)
+                            Console.WriteLine($"{sorszam++}. {z}");
+                        break;
+
+                   
         }
     }
 }
