@@ -178,7 +178,45 @@ namespace Zenelejatszo
                             Console.WriteLine("Hibás index!");
                         break;
 
-                   
+                    
+                    case "7":
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var z in zenek)
+                            Console.WriteLine($"{sorszam++}. {z}");
+
+                        Console.Write("Módosítandó index: ");
+                        int mod;
+                        int.TryParse(Console.ReadLine() ?? "-1", out mod);
+
+                        if (mod >= 0 && mod < zenek.Count)
+                        {
+                            Console.Write("Új cím: ");
+                            zenek[mod].Cim = Console.ReadLine() ?? "";
+
+                            Console.Write("Új előadó: ");
+                            zenek[mod].Eloado = Console.ReadLine() ?? "";
+
+                            Console.Write("Új műfaj: ");
+                            zenek[mod].Mufaj = Console.ReadLine() ?? "";
+
+                            Console.Write("Új hossz: ");
+                            double.TryParse(Console.ReadLine() ?? "0", out hossz);
+                            zenek[mod].HosszPerc = hossz;
+
+                            Console.WriteLine("Zene módosítva!");
+                        }
+                        else
+                            Console.WriteLine("Hibás index!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Rossz választás!");
+                        break;
+                }
+
+                Console.ReadKey();
+            }
         }
     }
 }
